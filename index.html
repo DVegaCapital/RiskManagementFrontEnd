@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="dgammaApp">
+<head>
+    <meta keywords="DGamma Risk Management Tool"/>
+    <meta charset="utf-8"/>
+    <title>DGamma Risk Management Tool</title>
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+
+    <!-- local css -->
+    <link href="app/css/app.css" rel="stylesheet"/>
+    <link href="app/css/appReplace.css" rel="stylesheet"/>
+</head>
+
+<body>
+<ng-view></ng-view>
+</body>
+
+<!-- angualr js -->
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//code.angularjs.org/1.5.0/angular.js"></script>
+<script src="//code.angularjs.org/1.5.0/angular-route.js"></script>
+<script src="//code.angularjs.org/1.5.0/angular-cookies.js"></script>
+<script src="app/bower_components/angular-animate/angular-animate.js"></script>
+<script src="app/bower_components/angular-resource/angular-resource.js"></script>
+
+<!-- other vendor js-->
+<script src="app/bower_components/jquery/dist/jquery.js"></script>
+<script src="app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="http://code.highcharts.com/stock/highstock.src.js"></script>
+<script src="app/bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+
+<!--local service -->
+<script src="app/app.js"></script>
+<script src="app/app-services/authentication.service.js"></script>
+<script src="app/app-services/flash.service.js"></script>
+<script src="app/app-services/user.service.local-storage.js"></script>
+<script src="app/home/home.controller.js"></script>
+<script src="app/login/login.controller.js"></script>
+<script src="app/register/register.controller.js"></script>
+<script src="app/js/services.js"></script>
+<script src="app/portfolio_panel/portfolio.main.js"></script>
+
+<!-- testing js -->
+<!--
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+-->
+</html>

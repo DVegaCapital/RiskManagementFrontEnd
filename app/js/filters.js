@@ -1,0 +1,1 @@
+var dgammaFilters = angular.module('dgammaFilters', []);

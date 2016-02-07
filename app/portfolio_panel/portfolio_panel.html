@@ -1,0 +1,206 @@
+<div id="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">DGamma Risk Management</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li class="active">
+                    <a href="#/portfolioDetail"><i class="fa fa-fw fa-dashboard"></i> Portfolio Management</a>
+                </li>
+                <li>
+                    <a href="#/instrumentManagment"><i class="fa fa-fw fa-bar-chart-o"></i> Instrument Management</a>
+                </li>
+                <li>
+                    <a href="#/configurationManagement"><i class="fa fa-fw fa-bank"></i> Configuration Management</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="portfolioDetail">
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Portfolio Overview
+                            <small>{{portfolio.portfolioName}} Overview</small>
+                        </h1>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Overview</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <!--                            <div class="col-xs-3">
+                                                                    <i class="fa fa-comments fa-5x"></i>
+                                                                </div>-->
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">0.44%</div>
+                                        <div>Value Change</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <!--                            <div class="col-xs-3">
+                                                                    <i class="fa fa-tasks fa-5x"></i>
+                                                                </div>-->
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">1,126%</div>
+                                        <div>Unrealized Gain/Loss</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <!--                            <div class="col-xs-3">
+                                                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                                                </div>-->
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">0.44%</div>
+                                        <div>Total Returns Today</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <!--                            <div class="col-xs-3">
+                                                                    <i class="fa fa-support fa-5x"></i>
+                                                                </div>-->
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">0.30%</div>
+                                        <div>versus Benchmark</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!--
+                        {
+                        "holdingName" : "Bank of America",
+                        "percentOfHolding" : "2%",
+                        "lastTraded" : "78.23",
+                        "valueChangedOneDay" : "98.23"
+                        }-->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> PORTFOLIO HOLDINGS</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Holding Name</th>
+                                        <th>Percent of Portfolio</th>
+                                        <th>Last Traded</th>
+                                        <th>Value Change 1 Day</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="holding in portfolio.holdings">
+                                        <th scope="row">{{holding.holdingName}}</th>
+                                        <td>{{holding.percentOfHolding}}</td>
+                                        <td>{{holding.lastTraded}}</td>
+                                        <td>{{holding.valueChangedOneDay}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <!-- import highcharts for more information -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> PORTFOLIO OVERVIEW</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <input ng-model="highchartsNG.title.text">
+                    <button ng-click="addSeries()">Add Series</button>
+                    <button ng-click="addPoints()">Add Points to Random Series</button>
+                    <button ng-click="removeRandomSeries()">Remove Random Series</button>
+                    <button ng-click="swapChartType()">Line/Bar</button>
+                    <div class="col-lg-6">
+                        <highchart id="chart1" config="highchartsNG"></highchart>
+                    </div>
+                    <div class="col-lg-6">
+                        <highchart id="chart2" config="highchartsTA"></highchart>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+    </div>
+</div>

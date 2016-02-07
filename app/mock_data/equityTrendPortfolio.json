@@ -1,0 +1,51 @@
+{
+  "portfolioName": "EquityTrendPortfolio",
+  "valueChange": "0.44%",
+  "unrealizedGainOrLoss": "1,126%",
+  "totalReturnOneDay": "0.44%",
+  "versusBenchmark": "0.30%",
+  "holdings": [
+    {
+      "holdingName": "Bank of China",
+      "percentOfHolding": "5%",
+      "lastTraded" : "34.54",
+      "valueChangedOneDay" : "23.09"
+    },
+    {
+      "holdingName": "JP Morgan",
+      "percentOfHolding": "6%",
+      "lastTraded" : "23.45",
+      "valueChangedOneDay" : "89.98"
+    },
+    {
+      "holdingName" : "Bank of America",
+      "percentOfHolding" : "2%",
+      "lastTraded" : "78.23",
+      "valueChangedOneDay" : "98.23"
+    },
+    {
+      "holdingName": "Merrill Lynch",
+      "percentOfHolding": "45%",
+      "lastTraded" : "34.56",
+      "valueChangedOneDay" : "12.22"
+    },
+    {
+      "holdingName": "CITI Bank",
+      "percentOfHolding": "2%",
+      "lastTraded" : "34.55",
+      "valueChangedOneDay" : "78.57"
+    },
+    {
+      "holdingName": "Nomura Bank",
+      "percentOfHolding": "5%",
+      "lastTraded" : "74.56",
+      "valueChangedOneDay" : "23.43"
+    },
+    {
+      "holdingName": "Morgan Stanley",
+      "percentOfHolding": "8%",
+      "lastTraded" : "23.33",
+      "valueChangedOneDay" : "65.98"
+    }
+  ]
+}
