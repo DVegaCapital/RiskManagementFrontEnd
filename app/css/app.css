@@ -8,9 +8,17 @@ body {
     color: #666;
 }
 
+#loginpage{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+
 /* Typography */
 h1#title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Arial';
     font-weight: bold;
     font-size: 4.2em;
     color: white;

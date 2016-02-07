@@ -9,7 +9,7 @@ function portfolioMainCtrl($scope, PortfolioDetailQuery){
         $scope.portfolio = data;
     });
 
-    $scope.highchartsNG = {
+/*    $scope.highchartsNG = {
         options: {
             chart: {
                 type: 'pie'
@@ -96,5 +96,5 @@ function portfolioMainCtrl($scope, PortfolioDetailQuery){
             name: 'Yield to Maturity',
             data: [3, 4, 4, 2, 5]
         }]
-    }
+    }*/
 }
