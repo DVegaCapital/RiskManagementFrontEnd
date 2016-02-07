@@ -17,7 +17,7 @@
     this.init('popover', element, options)
   }
 
-  if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
+  if (!$.fn.tooltip) throw new Error('Popover requires tooltip.vendor_js')
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -27,7 +27,7 @@
   })
 
 
-  // NOTE: POPOVER EXTENDS tooltip.js
+  // NOTE: POPOVER EXTENDS tooltip.vendor_js
   // ================================
 
   Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)
@@ -44,7 +44,7 @@
     var content = this.getContent()
 
     $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
-    $tip.find('.popover-content')[ // we use append for views objects to maintain js events
+    $tip.find('.popover-content')[ // we use append for views objects to maintain vendor_js events
       this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
     ](content)
 

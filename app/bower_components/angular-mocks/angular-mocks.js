@@ -12,7 +12,7 @@
  * @name angular.mock
  * @description
  *
- * Namespace from 'angular-mocks.js' which contains testing related code.
+ * Namespace from 'angular-mocks.vendor_js' which contains testing related code.
  */
 angular.mock = {};
 
@@ -320,7 +320,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ng.$log#log `log()`}.
        *
        * @example
-       * ```js
+       * ```vendor_js
        * $log.log('Some Log');
        * var first = $log.log.logs.unshift();
        * ```
@@ -334,7 +334,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ng.$log#info `info()`}.
        *
        * @example
-       * ```js
+       * ```vendor_js
        * $log.info('Some Info');
        * var first = $log.info.logs.unshift();
        * ```
@@ -348,7 +348,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ng.$log#warn `warn()`}.
        *
        * @example
-       * ```js
+       * ```vendor_js
        * $log.warn('Some Warning');
        * var first = $log.warn.logs.unshift();
        * ```
@@ -362,7 +362,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ng.$log#error `error()`}.
        *
        * @example
-       * ```js
+       * ```vendor_js
        * $log.error('Some Error');
        * var first = $log.error.logs.unshift();
        * ```
@@ -376,7 +376,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ng.$log#debug `debug()`}.
        *
        * @example
-       * ```js
+       * ```vendor_js
        * $log.debug('Some Error');
        * var first = $log.debug.logs.unshift();
        * ```
@@ -618,7 +618,7 @@ function padNumber(num, digits, trim) {
  * incomplete we might be missing some non-standard methods. This can result in errors like:
  * "Date.prototype.foo called on incompatible Object".
  *
- * ```js
+ * ```vendor_js
  * var newYearInBratislava = new TzDate(-1, '2009-12-31T23:00:00Z');
  * newYearInBratislava.getTimezoneOffset() => -60;
  * newYearInBratislava.getFullYear() => 2010;
@@ -1567,7 +1567,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Typically, you would call this method following each test case that asserts requests using an
    * "afterEach" clause.
    *
-   * ```js
+   * ```vendor_js
    *   afterEach($httpBackend.verifyNoOutstandingExpectation);
    * ```
    */
@@ -1588,7 +1588,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Typically, you would call this method following each test case that asserts requests using an
    * "afterEach" clause.
    *
-   * ```js
+   * ```vendor_js
    *   afterEach($httpBackend.verifyNoOutstandingRequest);
    * ```
    */

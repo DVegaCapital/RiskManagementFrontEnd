@@ -10,14 +10,14 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
   angular.module('highcharts-ng', [])
     .provider('highchartsNG', highchartsNGProvider)
     .directive('highchart', ['highchartsNG', '$timeout', highchart]);
-  
+
   function highchartsNGProvider(){
     var modules = [];
     var basePath = false;
     var lazyLoad = false;
     return {
-      HIGHCHART: 'highcharts.js',
-      HIGHSTOCK: 'stock/highstock.js',
+      HIGHCHART: 'highcharts.vendor_js',
+      HIGHSTOCK: 'stock/highstock.vendor_js',
       basePath: function (p) {
         basePath = p;
       },
@@ -53,7 +53,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           loading = true;
           var self = this;
           if (typeof jQuery === 'undefined') {
-            modules.unshift('adapters/standalone-framework.js');
+            modules.unshift('adapters/standalone-framework.vendor_js');
           }
           var doWork = function () {
             if (modules.length === 0) {
@@ -482,7 +482,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
       }
     };
-    
+
     // override link fn if lazy loading is enabled
     if(highchartsNGUtils.lazyLoad){
       var oldLink = res.link;

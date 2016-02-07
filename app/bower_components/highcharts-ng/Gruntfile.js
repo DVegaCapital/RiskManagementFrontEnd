@@ -63,7 +63,7 @@ module.exports = function(grunt) {
         files: [
           '<%= yo.src %>/{,*/}*.html',
           '{.tmp,<%= yo.src %>}/{,*/}*.css',
-          '{.tmp,<%= yo.src %>}/{,*/}*.js'
+          '{.tmp,<%= yo.src %>}/{,*/}*.vendor_js'
         ],
         options: {
           livereload: yoConfig.livereload
@@ -107,24 +107,24 @@ module.exports = function(grunt) {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: 'Gruntfile.js'
+        src: 'Gruntfile.vendor_js'
       },
       src: {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: ['<%= yo.src %>/{,*/}*.js']
+        src: ['<%= yo.src %>/{,*/}*.vendor_js']
       },
       test: {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/**/*.js']
+        src: ['test/**/*.vendor_js']
       }
     },
     karma: {
       options: {
-        configFile: 'karma.conf.js',
+        configFile: 'karma.conf.vendor_js',
         browsers: ['PhantomJS']
       },
       unit: {
@@ -136,12 +136,12 @@ module.exports = function(grunt) {
     },
     ngAnnotate: {
       dist: {
-        src: ['<%= yo.src %>/<%= pkg.name %>.js'],
-        dest: '<%= yo.dist %>/<%= pkg.name %>.js'
+        src: ['<%= yo.src %>/<%= pkg.name %>.vendor_js'],
+        dest: '<%= yo.dist %>/<%= pkg.name %>.vendor_js'
       }
       // dist: {
       //   files: {
-      //     '/.js': '/.js'
+      //     '/.vendor_js': '/.vendor_js'
       //   }
       // }
     },
@@ -151,8 +151,8 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['<%= yo.src %>/<%= pkg.name %>.js'],
-        dest: '<%= yo.dist %>/<%= pkg.name %>.js'
+        src: ['<%= yo.src %>/<%= pkg.name %>.vendor_js'],
+        dest: '<%= yo.dist %>/<%= pkg.name %>.vendor_js'
       }
     },
     uglify: {
@@ -161,7 +161,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: '<%= yo.dist %>/<%= pkg.name %>.min.js'
+        dest: '<%= yo.dist %>/<%= pkg.name %>.min.vendor_js'
       }
     }
   });

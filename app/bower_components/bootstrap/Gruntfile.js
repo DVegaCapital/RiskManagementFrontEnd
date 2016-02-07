@@ -41,40 +41,40 @@ module.exports = function (grunt) {
 
     jshint: {
       options: {
-        jshintrc: 'js/.jshintrc'
+        jshintrc: 'vendor_js/.jshintrc'
       },
       grunt: {
         options: {
           jshintrc: 'grunt/.jshintrc'
         },
-        src: ['Gruntfile.js', 'grunt/*.js']
+        src: ['Gruntfile.vendor_js', 'grunt/*.vendor_js']
       },
       src: {
-        src: 'js/*.js'
+        src: 'vendor_js/*.vendor_js'
       },
       test: {
-        src: 'js/tests/unit/*.js'
+        src: 'vendor_js/tests/unit/*.vendor_js'
       },
       assets: {
-        src: ['docs/assets/js/application.js', 'docs/assets/js/customizer.js']
+        src: ['docs/assets/vendor_js/application.vendor_js', 'docs/assets/vendor_js/customizer.vendor_js']
       }
     },
 
     jscs: {
       options: {
-        config: 'js/.jscs.json',
+        config: 'vendor_js/.jscs.json',
       },
       grunt: {
-        src: ['Gruntfile.js', 'grunt/*.js']
+        src: ['Gruntfile.vendor_js', 'grunt/*.vendor_js']
       },
       src: {
-        src: 'js/*.js'
+        src: 'vendor_js/*.vendor_js'
       },
       test: {
-        src: 'js/tests/unit/*.js'
+        src: 'vendor_js/tests/unit/*.vendor_js'
       },
       assets: {
-        src: ['docs/assets/js/application.js', 'docs/assets/js/customizer.js']
+        src: ['docs/assets/vendor_js/application.vendor_js', 'docs/assets/vendor_js/customizer.vendor_js']
       }
     },
 
@@ -97,20 +97,20 @@ module.exports = function (grunt) {
       },
       bootstrap: {
         src: [
-          'js/transition.js',
-          'js/alert.js',
-          'js/button.js',
-          'js/carousel.js',
-          'js/collapse.js',
-          'js/dropdown.js',
-          'js/modal.js',
-          'js/tooltip.js',
-          'js/popover.js',
-          'js/scrollspy.js',
-          'js/tab.js',
-          'js/affix.js'
+          'vendor_js/transition.vendor_js',
+          'vendor_js/alert.vendor_js',
+          'vendor_js/button.vendor_js',
+          'vendor_js/carousel.vendor_js',
+          'vendor_js/collapse.vendor_js',
+          'vendor_js/dropdown.vendor_js',
+          'vendor_js/modal.vendor_js',
+          'vendor_js/tooltip.vendor_js',
+          'vendor_js/popover.vendor_js',
+          'vendor_js/scrollspy.vendor_js',
+          'vendor_js/tab.vendor_js',
+          'vendor_js/affix.vendor_js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/vendor_js/<%= pkg.name %>.vendor_js'
       }
     },
 
@@ -123,32 +123,32 @@ module.exports = function (grunt) {
           banner: '<%= banner %>'
         },
         src: '<%= concat.bootstrap.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'dist/vendor_js/<%= pkg.name %>.min.vendor_js'
       },
       customize: {
         options: {
           preserveComments: 'some'
         },
         src: [
-          'docs/assets/js/vendor/less.min.js',
-          'docs/assets/js/vendor/jszip.min.js',
-          'docs/assets/js/vendor/uglify.min.js',
-          'docs/assets/js/vendor/blob.js',
-          'docs/assets/js/vendor/filesaver.js',
-          'docs/assets/js/raw-files.min.js',
-          'docs/assets/js/customizer.js'
+          'docs/assets/vendor_js/vendor/less.min.vendor_js',
+          'docs/assets/vendor_js/vendor/jszip.min.vendor_js',
+          'docs/assets/vendor_js/vendor/uglify.min.vendor_js',
+          'docs/assets/vendor_js/vendor/blob.vendor_js',
+          'docs/assets/vendor_js/vendor/filesaver.vendor_js',
+          'docs/assets/vendor_js/raw-files.min.vendor_js',
+          'docs/assets/vendor_js/customizer.vendor_js'
         ],
-        dest: 'docs/assets/js/customize.min.js'
+        dest: 'docs/assets/vendor_js/customize.min.vendor_js'
       },
       docsJs: {
         options: {
           preserveComments: 'some'
         },
         src: [
-          'docs/assets/js/vendor/holder.js',
-          'docs/assets/js/application.js'
+          'docs/assets/vendor_js/vendor/holder.vendor_js',
+          'docs/assets/vendor_js/application.vendor_js'
         ],
-        dest: 'docs/assets/js/docs.min.js'
+        dest: 'docs/assets/vendor_js/docs.min.vendor_js'
       }
     },
 
@@ -250,7 +250,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: './dist',
         src: [
-          '{css,js}/*.min.*',
+          '{css,vendor_js}/*.min.*',
           'css/*.map',
           'fonts/*'
         ],
@@ -260,9 +260,9 @@ module.exports = function (grunt) {
 
     qunit: {
       options: {
-        inject: 'js/tests/unit/phantom.js'
+        inject: 'vendor_js/tests/unit/phantom.vendor_js'
       },
-      files: 'js/tests/index.html'
+      files: 'vendor_js/tests/index.html'
     },
 
     connect: {
@@ -343,7 +343,7 @@ module.exports = function (grunt) {
         options: {
           build: process.env.TRAVIS_JOB_ID,
           concurrency: 10,
-          urls: ['http://127.0.0.1:3000/js/tests/index.html'],
+          urls: ['http://127.0.0.1:3000/vendor_js/tests/index.html'],
           browsers: grunt.file.readYAML('test-infra/sauce_browsers.yml')
         }
       }
@@ -379,14 +379,14 @@ module.exports = function (grunt) {
   // Only run Sauce Labs tests if there's a Sauce access key
   if (typeof process.env.SAUCE_ACCESS_KEY !== 'undefined' &&
       // Skip Sauce if running a different subset of the test suite
-      (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'sauce-js-unit')) {
+      (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'sauce-vendor_js-unit')) {
     testSubtasks.push('connect');
     testSubtasks.push('saucelabs-qunit');
   }
   grunt.registerTask('test', testSubtasks);
 
   // JS distribution task.
-  grunt.registerTask('dist-js', ['concat', 'uglify']);
+  grunt.registerTask('dist-vendor_js', ['concat', 'uglify']);
 
   // CSS distribution task.
   grunt.registerTask('dist-css', ['less', 'cssmin', 'csscomb', 'usebanner']);
@@ -395,7 +395,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', 'copy:docs');
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'dist-js', 'dist-docs']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'dist-vendor_js', 'dist-docs']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist', 'build-glyphicons-data', 'build-customizer', 'update-shrinkwrap']);

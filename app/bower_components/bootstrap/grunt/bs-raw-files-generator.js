@@ -1,6 +1,6 @@
 /* global btoa: true */
 /*!
- * Bootstrap Grunt task for generating raw-files.min.js for the Customizer
+ * Bootstrap Grunt task for generating raw-files.min.vendor_js for the Customizer
  * http://getbootstrap.com
  * Copyright 2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -26,6 +26,6 @@ module.exports = function generateRawFilesJs(banner) {
   if (!banner) {
     banner = '';
   }
-  var files = banner + getFiles('js') + getFiles('less') + getFiles('fonts');
-  fs.writeFileSync('docs/assets/js/raw-files.min.js', files);
+  var files = banner + getFiles('vendor_js') + getFiles('less') + getFiles('fonts');
+  fs.writeFileSync('docs/assets/vendor_js/raw-files.min.vendor_js', files);
 };
