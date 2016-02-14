@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     angular
@@ -50,8 +50,11 @@
         }
 
         function handleError(error) {
-            return function () {
-                return {success: false, message: error};
+            return function() {
+                return {
+                    success: false,
+                    message: error
+                };
             };
         }
     }
