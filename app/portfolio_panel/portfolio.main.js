@@ -10,13 +10,20 @@ function portfolioMainCtrl($scope, PortfolioDetailQuery) {
     });
 
     $scope.templates =
-        [{name: 'portfolios', url: 'app/portfolio_detail/portfolio_detail.html'},
-            {name: 'instruments', url: 'app/instrument_detail/instrument_detail.html'}];
+        [{name: 'portfolios', url: 'app/portfolio_overall/portfolio_overall.html'},
+            {name: 'PortfolioDetails', url: 'app/portfolio_detail/portfolio_detail.html'}];
 
     $scope.template = $scope.templates[0];
 
     $scope.changeView = function (val) {
         $scope.template = $scope.templates[val];
+    }
+
+    $scope.forwardTODetails = function(){
+        PortfolioDetailQuery.detailJSON().success(function(data){
+            $scope.portfolio = data;
+        })
+        $scope.template = $scope.templates[1];
     }
 
     /*    $scope.highchartsNG = {

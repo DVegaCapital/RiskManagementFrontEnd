@@ -9,7 +9,11 @@ function PortfolioDetailQuery($http) {
     var portfolioDetailValue = {};
 
     portfolioDetailValue.jsonData = function () {
-        return $http.get('/app/mock_data/equityTrendPortfolio.json');
+        return $http.get('/app/mock_data/portfolios.json');
+    }
+
+    portfolioDetailValue.detailJSON = function(){
+        return $http.get('/app/mock_data/equityTrendPortfolio.json')
     }
 
     return portfolioDetailValue;
