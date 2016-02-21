@@ -22,7 +22,9 @@ body {
 }
 
 #page-wrapper {
-    width: 100%;
+    position:fixed;
+    left:225px;
+    right:0px;
     height: 100%;
     padding: 0;
     background-color: #fff;
